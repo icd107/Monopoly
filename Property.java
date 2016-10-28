@@ -58,11 +58,11 @@ public class Property
 		}
 		String toString()
 		{
-			if(owner != 0) //if property is owned
+			if(owner != 0) //if property is owned print rent, houses, hotels, upgrade cost
 			{
 				return name + "\n\tRent: $" + rent + "\n\tNumber of Houses: " + houses + "\n\tHotel: " + hotel + "\n\tCost of upgrade: $" + getCostOfUpgrade();
 			}
-			else //if property isn't owned
+			else //if property isn't owned print cost, rent
 			{
 				return name + "\n\tCost: $" + cost + "\n\tInitial rent: $" + rent;
 			}

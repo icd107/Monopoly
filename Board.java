@@ -21,7 +21,7 @@ public class Board
 		properties[14] = new Property("Snap, Crackle, Pop", 0, 550, 50);
 		properties[15] = new Property("Use of \"detrimental\"", 0, 675, 65);		//English
 		properties[16] = new Property("Testing on the Females", 0, 675, 65);
-		properties[17] = new Property("\"Exercise reduces stress\"", 0, 675, 65);
+		properties[17] = new Property("\"Exercise reduces stress.\"", 0, 675, 65);
 		properties[18] = new Property("AIME", 0, 800, 80);							//Math
 		properties[19] = new Property("Stella: Combinatorics", 0, 800, 80);
 	}
