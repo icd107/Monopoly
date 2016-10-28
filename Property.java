@@ -1,3 +1,5 @@
+//purchase value, mortgage value, rent, name
+
 public class Property
 {
 	private:
@@ -5,8 +7,10 @@ public class Property
 		int owner;
 		float cost;
 		float rent;
+		float initRent;
 		int houses;
 		boolean hotel;
+		boolean isMortgaged;
 
 	public:
 		Property(String name, int owner, float cost, float rent)
@@ -15,11 +19,34 @@ public class Property
 			this.owner = owner;
 			this.cost = cost;
 			this.rent = rent;
+			this.initRent = rent;
 		}
 
 		void assignProperty(int owner)
 		{
-			this.owner = owner;
+			this.owner = owner;				//sets owner index
+		}
+		float mortgageProperty()
+		{
+			houses = 0;			
+			hotel = false;
+			rent = initRent;
+			return initRent / 2;
+		}
+		void unMortgageProperty()
+		{
+			isMortgaged = true;
+		}
+		float getRent()
+		{
+			if(isMortgaged)
+			{
+				return 0;
+			}
+			else
+			{
+				return rent;
+			}
 		}
 		boolean isBought()
 		{

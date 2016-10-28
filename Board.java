@@ -1,3 +1,5 @@
+//Array of properties, movement of players based off of die roll, handles passing go
+
 public class Board
 {
 	Property[] properties = new Property[20];
