@@ -1,97 +1,85 @@
 //purchase value, mortgage value, rent, name
 
-public class Property
+public class Property extends Space
 {
-	private:
-		String name;
-		int owner;
-		float cost;
-		float rent;
-		float initRent;
-		int houses;
-		boolean hotel;
-		boolean isMortgaged;
+	private int owner;
+	private double cost;
+	private double initRent;
+	private int houses;
+	private boolean hotel;
 
-	public:
-		Property(String name, int owner, float cost, float rent)
-		{
-			this.name = name;
-			this.owner = owner;
-			this.cost = cost;
-			this.rent = rent;
-			this.initRent = rent;
-		}
+	Property(String name, int owner, double cost, double rent)
+	{
+		super(name, rent);
+		this.owner = owner;
+		this.cost = cost;
+		this.initRent = rent;
+	}
 
-		void assignProperty(int owner)
+	void assignProperty(int owner)
+	{
+		this.owner = owner;				//sets owner index
+	}
+	double mortgageProperty()
+	{
+		resetProperty();
+		isMortgaged = true;
+		return cost / 2;
+	}
+	void resetProperty()
+	{
+		houses = 0;
+		hotel = false;
+		rent = initRent;
+	}
+	void unMortgageProperty()
+	{
+		isMortgaged = true;
+	}
+	boolean isBought()
+	{
+		if(owner == 0)
+			return false;
+		else
+			return true;
+	}
+	void upgradeProperty()
+	{
+		if(houses < 4)
 		{
-			this.owner = owner;				//sets owner index
+			houses++;
+			rent *= 1.25; //increase rent
 		}
-		float mortgageProperty()
+		else if(!hotel)
 		{
-			houses = 0;			
-			hotel = false;
-			rent = initRent;
-			return initRent / 2;
+			hotel = true;
+			rent *= 2;
 		}
-		void unMortgageProperty()
+	}
+	double getCostOfUpgrade()
+	{
+		if(houses < 4)
 		{
-			isMortgaged = true;
+			return cost / 2;
 		}
-		float getRent()
+		else if(!hotel)
 		{
-			if(isMortgaged)
-			{
-				return 0;
-			}
-			else
-			{
-				return rent;
-			}
+			return cost * 1.5;
 		}
-		boolean isBought()
+		else
 		{
-			if(owner == 0)
-				return false;
-			else
-				return true;
+			return 0;
 		}
-		void upgradeProperty()
+	}
+	public String toString()
+	{
+		if(owner != 0) //if property is owned print rent, houses, hotels, upgrade cost
 		{
-			if(houses < 4)
-			{
-				houses++;
-				rent *= 1.25; //increase rent
-			}
-			else if(!hotel)
-			{
-				hotel = true;
-				rent *= 2;
-			}
+			return name + "\n\tRent: $" + rent + "\n\tNumber of Houses: " + houses + "\n\tHotel: " + hotel + "\n\tCost of upgrade: $" + getCostOfUpgrade();
 		}
-		float getCostOfUpgrade()
+		else //if property isn't owned print cost, rent
 		{
-			if(houses < 4)
-			{
-				return cost / 2;
-			}
-			else if(!hotel)
-			{
-				return cost * 1.5;
-			}
-			else
-			{
-				return 0;
-			}
+			return name + "\n\tCost: $" + cost + "\n\tInitial rent: $" + rent;
 		}
-		String toString()
-		{
-			if(owner != 0) //if property is owned print rent, houses, hotels, upgrade cost
-			{
-				return name + "\n\tRent: $" + rent + "\n\tNumber of Houses: " + houses + "\n\tHotel: " + hotel + "\n\tCost of upgrade: $" + getCostOfUpgrade();
-			}
-			else //if property isn't owned print cost, rent
-			{
-				return name + "\n\tCost: $" + cost + "\n\tInitial rent: $" + rent;
-			}
-		}
+	}
 }

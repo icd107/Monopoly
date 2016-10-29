@@ -2,7 +2,6 @@
 
 public class Player
 {
-	private:
-		int index;
-		float money;	
+	private int index;
+	private float money;	
 }
