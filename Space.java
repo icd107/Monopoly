@@ -13,7 +13,7 @@ public class Space
 		this.isMortgaged = false;
 	}
 
-	double getRent(boolean isMortgaged)
+	double getRent()
 	{
 		if(isMortgaged)
 		{
@@ -23,5 +23,9 @@ public class Space
 		{
 			return rent;
 		}
+	}
+	String getName()
+	{
+		return name;
 	}
 }

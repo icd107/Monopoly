@@ -34,7 +34,7 @@ public class Property extends Space
 	}
 	void unMortgageProperty()
 	{
-		isMortgaged = true;
+		isMortgaged = false;
 	}
 	boolean isBought()
 	{
@@ -73,13 +73,13 @@ public class Property extends Space
 	}
 	public String toString()
 	{
-		if(owner != 0) //if property is owned print rent, houses, hotels, upgrade cost
+		if(owner == 0) //if property isn't owned print cost, rent
+		{
+			return name + "\n\tCost: $" + cost + "\n\tInitial rent: $" + initRent;
+		}
+		else //if property is owned print rent, houses, hotels, upgrade cost
 		{
 			return name + "\n\tRent: $" + rent + "\n\tNumber of Houses: " + houses + "\n\tHotel: " + hotel + "\n\tCost of upgrade: $" + getCostOfUpgrade();
-		}
-		else //if property isn't owned print cost, rent
-		{
-			return name + "\n\tCost: $" + cost + "\n\tInitial rent: $" + rent;
 		}
 	}
 }
