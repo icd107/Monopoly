@@ -6,16 +6,16 @@ public class Board
 
 	Board()
 	{
-		properties[0] = new Space("Go", -200);										//Go
-		properties[1] = new Property("Number 18", 0, 50, 5);						//Annoys Stella Properties
-		properties[2] = new Property("A Steetcar Named Stella", 0, 50, 5);
-		properties[3] = new Space("Income Tax", 200)								//Income Tax
-		properties[4] = new Railroad("The Underground Railroad", 100, 25);			//Railroad
-		properties[5] = new Property("AMC 10", 0, 100, 10);							//Too easy for Stella Properties
-		properties[6] = new Property("AMC 12", 0, 100, 10);
-		properties[7] = new Property("Mandarin", 0, 100, 10);
-		properties[8] = new Space("Free Space", 0);									//Free Space
-		properties[9] = new Property("Move, Witch", 0, 175, 20);					//Misc. Properties
+		properties[00] = new Space("Go", -200);										//Go
+		properties[01] = new Property("Number 18", 0, 50, 5);						//Annoys Stella Properties
+		properties[02] = new Property("A Steetcar Named Stella", 0, 50, 5);
+		properties[03] = new Space("Income Tax", 200)								//Income Tax
+		properties[04] = new Railroad("The Underground Railroad", 100, 25);			//Railroad
+		properties[05] = new Property("AMC 10", 0, 100, 10);							//Too easy for Stella Properties
+		properties[06] = new Property("AMC 12", 0, 100, 10);
+		properties[07] = new Property("Mandarin", 0, 100, 10);
+		properties[08] = new Space("Free Space", 0);									//Free Space
+		properties[09] = new Property("Move, Witch", 0, 175, 20);					//Misc. Properties
 		properties[10] = new Property("The Hilton", 0, 175, 20);
 		properties[11] = new Railroad("New Jersey Transit", 100, 25);				//Railroad
 		properties[12] = new Property("Microwavable Popcorn", 0, 300, 30);			//Food Properties
