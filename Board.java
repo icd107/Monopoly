@@ -37,9 +37,4 @@ public class Board
 		properties[28] = new Property("AIME", 0, 800, 80);							//Math Properties
 		properties[29] = new Property("Stella: Combinatorics", 0, 800, 80);
 	}
-
-	Space getProperty(int index)
-	{
-		return properties[index];
-	}
 }
