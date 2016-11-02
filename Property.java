@@ -8,10 +8,9 @@ public class Property extends Space
 	private int houses;
 	private boolean hotel;
 
-	Property(String name, int owner, int cost, int rent)
+	Property(String name, int cost, int rent)
 	{
 		super(name, rent);
-		this.owner = owner;
 		this.cost = cost;
 		this.initRent = rent;
 	}

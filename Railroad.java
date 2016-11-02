@@ -4,10 +4,9 @@ public class Railroad extends Space
 	private int cost;
 	private int initRent;
 
-	Railroad(String name, int cost, int rent, int owner)
+	Railroad(String name, int cost, int rent)
 	{
 		super(name, rent);
-		this.owner = owner;
 		initRent = rent; //generally begins at 50
 		this.cost = cost;
 	}
