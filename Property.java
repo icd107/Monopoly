@@ -3,12 +3,12 @@
 public class Property extends Space
 {
 	private int owner;
-	private double cost;
-	private double initRent;
+	private int cost;
+	private int initRent;
 	private int houses;
 	private boolean hotel;
 
-	Property(String name, int owner, double cost, double rent)
+	Property(String name, int owner, int cost, int rent)
 	{
 		super(name, rent);
 		this.owner = owner;
@@ -16,11 +16,15 @@ public class Property extends Space
 		this.initRent = rent;
 	}
 
-	void assignProperty(int owner)
+	void setOwner(int owner)
 	{
 		this.owner = owner;				//sets owner index
 	}
-	double mortgageProperty()
+	int getOwner()
+	{
+		return owner;
+	}
+	int mortgageProperty()
 	{
 		resetProperty();
 		isMortgaged = true;
@@ -56,7 +60,7 @@ public class Property extends Space
 			rent *= 2;
 		}
 	}
-	double getCostOfUpgrade()
+	int getCostOfUpgrade()
 	{
 		if(houses < 4)
 		{
@@ -64,7 +68,7 @@ public class Property extends Space
 		}
 		else if(!hotel)
 		{
-			return cost * 1.5;
+			return (int)(cost * 1.5);
 		}
 		else
 		{

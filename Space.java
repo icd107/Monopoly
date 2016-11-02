@@ -3,26 +3,22 @@
 public class Space
 {
 	String name;
-	double rent;
+	int rent;
 	boolean isMortgaged;
 
-	Space(String name, double rent)
+	Space(String name, int rent)
 	{
 		this.name = name;
 		this.rent = rent;
 		this.isMortgaged = false;
 	}
 
-	double getRent()
+	int getRent()
 	{
 		if(isMortgaged)
-		{
-			return 0.0;
-		}
+			return 0;
 		else
-		{
 			return rent;
-		}
 	}
 	String getName()
 	{

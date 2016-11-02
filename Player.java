@@ -2,6 +2,38 @@
 
 public class Player
 {
-	private int index;
-	private float money;	
+	private int id;
+	private int money;
+	private String name;
+	private int locationIndex;
+
+	Player(String name, int id, int initMoney)
+	{
+		this.name = name;
+		this.id = id;
+		this.money = initMoney;
+		locationIndex = 0;
+	}
+
+	void addMoney(int money)
+	{
+		this.money += money;
+	}
+	void subtractMoney(int money)
+	{
+		this.money -= money;
+	}
+	public String toString()
+	{
+		return name + "\n\tMoney: $" + money + "\n\tYou are on " + Board.properties[locationIndex].getName();
+	}
+	void move(int spaces)
+	{
+		locationIndex += spaces;
+		if(locationIndex > 29) //30 properties index 0 - 29 so greater than 29
+		{
+			locationIndex -= 29;
+			addMoney(200);
+		}
+	}
 }
