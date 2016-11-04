@@ -23,6 +23,10 @@ public class Player
 	{
 		this.money -= money;
 	}
+	int getLocationIndex()
+	{
+		return locationIndex;
+	}
 	public String toString()
 	{
 		return name + "\n\tMoney: $" + money + "\n\tYou are on " + Board.properties[locationIndex].getName();

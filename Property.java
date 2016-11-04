@@ -17,15 +17,15 @@ public class Property extends Space
 
 	void setOwner(int owner)
 	{
-		this.owner = owner;				//sets owner index
+		this.owner = owner;				//sets owner id
 	}
 	int getOwner()
 	{
-		return owner;
+		return owner;					//returns owner id
 	}
 	int mortgageProperty()
 	{
-		resetProperty();
+		resetProperty();				//mortage property; return amount gained
 		isMortgaged = true;
 		return cost / 2;
 	}
