@@ -13,15 +13,21 @@ public class Property extends Space
 		super(name, rent);
 		this.cost = cost;
 		this.initRent = rent;
+		this.canBuy = true;
 	}
 
 	void setOwner(int owner)
 	{
+		this.canBuy = false;
 		this.owner = owner;				//sets owner id
 	}
 	int getOwner()
 	{
 		return owner;					//returns owner id
+	}
+	int getCost()
+	{
+		return cost;
 	}
 	int mortgageProperty()
 	{

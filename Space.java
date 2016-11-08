@@ -5,12 +5,14 @@ public class Space
 	String name;
 	int rent;
 	boolean isMortgaged;
+	boolean canBuy;
 
 	Space(String name, int rent)
 	{
 		this.name = name;
 		this.rent = rent;
 		this.isMortgaged = false;
+		this.canBuy = false;
 	}
 
 	int getRent()
@@ -23,5 +25,9 @@ public class Space
 	String getName()
 	{
 		return name;
+	}
+	boolean canBuy()
+	{
+		return canBuy;
 	}
 }

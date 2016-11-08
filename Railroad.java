@@ -9,11 +9,17 @@ public class Railroad extends Space
 		super(name, rent);
 		initRent = rent; //generally begins at 50
 		this.cost = cost;
+		this.canBuy = true;
 	}
 
-	void assignProperty(int owner)
+	void setOwner(int owner)
 	{
+		this.canBuy = false;
 		this.owner = owner;				//sets owner index
+	}
+	int getCost()
+	{
+		return cost;
 	}
 	int mortgageProperty()
 	{

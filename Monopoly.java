@@ -38,10 +38,11 @@ public class Monopoly
 				System.out.println(players[i]);
 				while(true)
 				{
+					Space playerSpace = board.properties[players[i].getLocationIndex()].getRent();
 					int roll = die.rollDie();
 					System.out.println("You rolled a " + roll);
 					players[i].move(roll);
-					//players[i].subtractMoney(board.properties[players[i].getLocationIndex()].getRent());
+					
 					if(die.isDouble())
 					{
 						System.out.println("Roll again!");
@@ -50,10 +51,37 @@ public class Monopoly
 					if(die.hasRolledThreeDoubles())
 					{
 						System.out.println("You have rolled three doubles!\nYou're going to be fined $300!");
-						players[i].subtractMoney(board.properties[players[i].getLocationIndex()].getRent());
+						players[i].subtractMoney(playerSpace);
 						break;
 					}
 					System.out.println(players[i]);
+
+					if(playerSpace.canBuy() && !playerSpace.isBought())
+					{
+						System.out.println("Do you want to buy " + playSpace.getName() + "?");
+						int tries  0;
+						while(tries < 2)
+						{
+							String answer = in.nextLine();
+							if(answer.equalsIgnoreCase("yes"))
+							{
+								players[i].subtractMoney(playerSpace.getCost());
+								playerSpace.setOwner(i);
+								System.out.println("You are now the owner!");
+								break;
+							}
+							else
+							{
+								System.out.println("Are you sure? Do you want to buy " + playSpace.getName() + "?");
+								tries++;
+							}
+						}
+					}
+					if(playerSpace.getOwner() == i)
+					{
+						System.out.println("Do you want to buy a house or hotel?")
+					}
+
 					break;
 				}
 			}
