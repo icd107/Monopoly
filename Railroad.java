@@ -1,14 +1,12 @@
 public class Railroad extends Space
 {
 	private int owner;
-	private int cost;
 	private int initRent;
 
 	Railroad(String name, int cost, int rent)
 	{
-		super(name, rent);
+		super(name, rent, cost);
 		initRent = rent; //generally begins at 50
-		this.cost = cost;
 		this.canBuy = true;
 	}
 
@@ -16,10 +14,6 @@ public class Railroad extends Space
 	{
 		this.canBuy = false;
 		this.owner = owner;				//sets owner index
-	}
-	int getCost()
-	{
-		return cost;
 	}
 	int mortgageProperty()
 	{

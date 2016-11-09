@@ -1,4 +1,5 @@
 //Array of properties, movement of players based off of die roll, handles passing go
+import java.util.Scanner;
 
 public class Board
 {
@@ -36,5 +37,24 @@ public class Board
 		properties[27] = new Space("Luxury Tax", 100);								//Luxury Tax
 		properties[28] = new Property("AIME", 800, 80);								//Math Properties
 		properties[29] = new Property("Stella: Combinatorics", 800, 80);
+	}
+
+	boolean checkIfYes(Scanner in)
+	{
+		int tries = 0;
+		while(tries < 2)
+		{
+			String answer = in.nextLine();
+			if(answer.equalsIgnoreCase("yes"))
+			{
+				return true;
+			}
+			else
+			{
+				System.out.println("In case you f'ed up and typed the wrong thing... put in your answer again.");
+				tries++;
+			}
+		}
+		return false;
 	}
 }

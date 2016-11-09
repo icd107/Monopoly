@@ -3,15 +3,13 @@
 public class Property extends Space
 {
 	private int owner;
-	private int cost;
 	private int initRent;
 	private int houses;
 	private boolean hotel;
 
 	Property(String name, int cost, int rent)
 	{
-		super(name, rent);
-		this.cost = cost;
+		super(name, rent, cost);
 		this.initRent = rent;
 		this.canBuy = true;
 	}
@@ -24,10 +22,6 @@ public class Property extends Space
 	int getOwner()
 	{
 		return owner;					//returns owner id
-	}
-	int getCost()
-	{
-		return cost;
 	}
 	int mortgageProperty()
 	{
@@ -44,13 +38,6 @@ public class Property extends Space
 	void unMortgageProperty()
 	{
 		isMortgaged = false;
-	}
-	boolean isBought()
-	{
-		if(owner == 0)
-			return false;
-		else
-			return true;
 	}
 	void upgradeProperty()
 	{
