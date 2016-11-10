@@ -53,6 +53,7 @@ public class Monopoly
 						{
 							players[i].subtractMoney(playerSpace.getCost());
 							playerSpace.setOwner(i);
+							System.out.println("Now you own " + playerSpace.getName() + "!");
 						}
 					}
 					if(playerSpace.getOwner() == players[i].getID())

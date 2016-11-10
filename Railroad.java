@@ -5,8 +5,7 @@ public class Railroad extends Space
 
 	Railroad(String name, int cost, int rent)
 	{
-		this.name = name;
-		this.rent = rent;
+		super(name, rent);
 		initRent = rent; //generally begins at 50
 		this.canBuy = true;
 		this.cost = cost;

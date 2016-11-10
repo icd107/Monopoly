@@ -45,7 +45,7 @@ public class Board
 		String answer;
 		while(tries < 2)
 		{
-			answer = in.nextLine();
+			answer = in.next();
 			if(answer.equalsIgnoreCase("yes"))
 			{
 				return true;

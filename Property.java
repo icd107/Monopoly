@@ -9,8 +9,7 @@ public class Property extends Space
 
 	Property(String name, int cost, int rent)
 	{
-		this.name = name;
-		this.rent = rent;
+		super(name, rent);
 		this.initRent = rent;
 		this.canBuy = true;
 		this.cost = cost;
