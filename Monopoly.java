@@ -30,6 +30,7 @@ public class Monopoly
 			String playerName = in.next();
 			players[i] = new Player(playerName, (i + 1), 750);
 		}
+		System.out.println("\n");
 
 		while(game)
 		{
@@ -43,6 +44,27 @@ public class Monopoly
 					System.out.println("You rolled a " + roll);
 					players[i].move(roll);
 					
+					System.out.println(players[i]);
+
+					if(playerSpace.canBuy())
+					{
+						System.out.println("Do you want to buy " + playerSpace.getName() + "?");
+						if(board.checkIfYes(in))
+						{
+							players[i].subtractMoney(playerSpace.getCost());
+							playerSpace.setOwner(i);
+						}
+					}
+					if(playerSpace.getOwner() == players[i].getID())
+					{
+						System.out.println("Do you want to buy a house or hotel?");
+						if(board.checkIfYes(in))
+						{
+							players[i].subtractMoney(playerSpace.getCostOfUpgrade());
+							playerSpace.upgradeProperty();
+						}
+					}
+
 					if(die.isDouble())
 					{
 						System.out.println("Roll again!");
@@ -53,26 +75,6 @@ public class Monopoly
 						System.out.println("You have rolled three doubles!\nYou're going to be fined $300!");
 						players[i].subtractMoney(playerSpace.getRent());
 						break;
-					}
-					System.out.println(players[i]);
-
-					if(playerSpace.canBuy())
-					{
-						System.out.println("Do you want to buy " + playerSpace.getName() + "?");
-						if(board.checkIfYes(in))
-						{
-							players[i].subtractMoney(board.properties[players[i].getLocationIndex()].getCost());
-							playerSpace.setOwner(i);
-						}
-					}
-					if(playerSpace.getOwner() == i)
-					{
-						System.out.println("Do you want to buy a house or hotel?");
-						if(board.checkIfYes(in))
-						{
-							players[i].subtractMoney(playerSpace.getCostOfUpgrade());
-							playerSpace.upgradeProperty();
-						}
 					}
 
 					break;

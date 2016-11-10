@@ -42,14 +42,15 @@ public class Board
 	boolean checkIfYes(Scanner in)
 	{
 		int tries = 0;
+		String answer;
 		while(tries < 2)
 		{
-			String answer = in.nextLine();
+			answer = in.nextLine();
 			if(answer.equalsIgnoreCase("yes"))
 			{
 				return true;
 			}
-			else
+			else if(!answer.equalsIgnoreCase("yes"))
 			{
 				System.out.println("In case you f'ed up and typed the wrong thing... put in your answer again.");
 				tries++;

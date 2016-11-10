@@ -13,8 +13,8 @@ public class Space
 		this.name = name;
 		this.rent = rent;
 		this.isMortgaged = false;
-		this.canBuy = false;
 		this.cost = 0;
+		this.canBuy = false;
 	}
 
 	int getRent()
@@ -34,6 +34,7 @@ public class Space
 	}
 	boolean canBuy()
 	{
+		System.out.println(canBuy);
 		return canBuy;
 	}
 	public String toString()

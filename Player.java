@@ -19,6 +19,10 @@ public class Player
 	{
 		this.money += money;
 	}
+	int getID()
+	{
+		return id;
+	}
 	void subtractMoney(int money)
 	{
 		this.money -= money;
