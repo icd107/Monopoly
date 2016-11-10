@@ -36,18 +36,15 @@ public class Space
 	{
 		return canBuy;
 	}
-	void setOwner(int owner) {}
-	int getOwner()
-	{
-		return 0;
-	}
-	int getCostOfUpgrade()
-	{
-		return 0;
-	}
-	void upgradeProperty() {}
 	public String toString()
 	{
 		return name + "\n\tMoney from landing on space: " + rent;
 	}
+
+	//Placeholders to prevent me from getting errors
+	//Don't judge me this was my quick fix
+	void setOwner(int owner) {}
+	int getOwner() { return 0; }
+	int getCostOfUpgrade() { return 0; }
+	void upgradeProperty() {}
 }
