@@ -6,7 +6,6 @@ public class Property extends Space
 	private int initRent;
 	private int houses;
 	private boolean hotel;
-	private int cost;
 
 	Property(String name, int cost, int rent)
 	{
@@ -16,11 +15,13 @@ public class Property extends Space
 		this.cost = cost;
 	}
 
+	@Override
 	void setOwner(int owner)
 	{
 		this.canBuy = false;
 		this.owner = owner;				//sets owner id
 	}
+	@Override
 	int getOwner()
 	{
 		return owner;					//returns owner id
@@ -41,6 +42,7 @@ public class Property extends Space
 	{
 		isMortgaged = false;
 	}
+	@Override
 	void upgradeProperty()
 	{
 		if(houses < 4)
@@ -54,6 +56,7 @@ public class Property extends Space
 			rent *= 2;
 		}
 	}
+	@Override
 	int getCostOfUpgrade()
 	{
 		if(houses < 4)
@@ -69,6 +72,7 @@ public class Property extends Space
 			return 0;
 		}
 	}
+	@Override
 	public String toString()
 	{
 		if(owner == 0) //if property isn't owned print cost, rent

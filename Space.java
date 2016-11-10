@@ -6,6 +6,7 @@ public class Space
 	int rent;
 	boolean isMortgaged;
 	boolean canBuy;
+	int cost;
 
 	Space(String name, int rent)
 	{
@@ -13,6 +14,7 @@ public class Space
 		this.rent = rent;
 		this.isMortgaged = false;
 		this.canBuy = false;
+		this.cost = 0;
 	}
 
 	int getRent()
@@ -22,6 +24,10 @@ public class Space
 		else
 			return rent;
 	}
+	int getCost()
+	{
+		return cost;
+	}
 	String getName()
 	{
 		return name;
@@ -29,5 +35,19 @@ public class Space
 	boolean canBuy()
 	{
 		return canBuy;
+	}
+	void setOwner(int owner) {}
+	int getOwner()
+	{
+		return 0;
+	}
+	int getCostOfUpgrade()
+	{
+		return 0;
+	}
+	void upgradeProperty() {}
+	public String toString()
+	{
+		return name + "\n\tMoney from landing on space: " + rent;
 	}
 }

@@ -61,7 +61,7 @@ public class Monopoly
 						System.out.println("Do you want to buy " + playerSpace.getName() + "?");
 						if(board.checkIfYes(in))
 						{
-							players[i].subtractMoney(playerSpace.getCost());
+							players[i].subtractMoney(board.properties[players[i].getLocationIndex()].getCost());
 							playerSpace.setOwner(i);
 						}
 					}

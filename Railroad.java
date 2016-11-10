@@ -2,7 +2,6 @@ public class Railroad extends Space
 {
 	private int owner;
 	private int initRent;
-	private int cost;
 
 	Railroad(String name, int cost, int rent)
 	{
@@ -12,10 +11,16 @@ public class Railroad extends Space
 		this.cost = cost;
 	}
 
+	@Override
 	void setOwner(int owner)
 	{
 		this.canBuy = false;
 		this.owner = owner;				//sets owner index
+	}
+	@Override
+	int getOwner()
+	{
+		return owner;
 	}
 	int mortgageProperty()
 	{
@@ -31,10 +36,17 @@ public class Railroad extends Space
 	{
 		rent = initRent;
 	}
+	@Override
 	void upgradeProperty()
 	{
 		rent *= 2;
 	}
+	@Override
+	int getCostOfUpgrade()
+	{
+		return 100;
+	}
+	@Override
 	public String toString()
 	{
 		if(owner == 0)
