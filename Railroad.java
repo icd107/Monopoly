@@ -2,12 +2,14 @@ public class Railroad extends Space
 {
 	private int owner;
 	private int initRent;
+	private int cost;
 
 	Railroad(String name, int cost, int rent)
 	{
-		super(name, rent, cost);
+		super(name, rent);
 		initRent = rent; //generally begins at 50
 		this.canBuy = true;
+		this.cost = cost;
 	}
 
 	void setOwner(int owner)

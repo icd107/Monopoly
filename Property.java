@@ -6,12 +6,14 @@ public class Property extends Space
 	private int initRent;
 	private int houses;
 	private boolean hotel;
+	private int cost;
 
 	Property(String name, int cost, int rent)
 	{
-		super(name, rent, cost);
+		super(name, rent);
 		this.initRent = rent;
 		this.canBuy = true;
+		this.cost = cost;
 	}
 
 	void setOwner(int owner)
