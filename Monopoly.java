@@ -42,9 +42,8 @@ public class Monopoly
 					int roll = die.rollDie();
 					System.out.println("You rolled a " + roll);
 					players[i].move(roll);
-
-					System.out.println("Property canbuy : " + playerSpace.canBuy());
 					
+					playerSpace = board.properties[players[i].getLocationIndex()];
 					System.out.println(players[i]);
 
 					if(playerSpace.canBuy())
@@ -78,11 +77,20 @@ public class Monopoly
 						players[i].subtractMoney(playerSpace.getRent());
 						break;
 					}
+					if(players[i].getMoney() < 0)
+					{
+						game = false;
+						System.out.println(players[i].getName() + " has lost!");
+						System.out.println("Every one else wins. Make fun of " + players[i].getName());
+					}
 
 					break;
 				}
+				die.resetDoubles();
+				System.out.println("Enter any letter to end your turn");
+				in.next();
+				System.out.println();
 			}
-			game = false;
 		}
 	}
 }

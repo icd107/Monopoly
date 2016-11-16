@@ -23,6 +23,10 @@ public class Player
 	{
 		return id;
 	}
+	String getName()
+	{
+		return name;
+	}
 	void subtractMoney(int money)
 	{
 		this.money -= money;
@@ -43,5 +47,9 @@ public class Player
 			locationIndex -= 29;
 			addMoney(200);
 		}
+	}
+	public int getMoney()
+	{
+		return money;
 	}
 }

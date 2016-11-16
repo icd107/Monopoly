@@ -34,7 +34,6 @@ public class Space
 	}
 	boolean canBuy()
 	{
-		System.out.println(canBuy);
 		return canBuy;
 	}
 	public String toString()
