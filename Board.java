@@ -52,8 +52,11 @@ public class Board
 			}
 			else if(!answer.equalsIgnoreCase("yes"))
 			{
-				System.out.println("In case you f'ed up and typed the wrong thing... put in your answer again.");
 				tries++;
+				if(tries < 2)
+				{
+					System.out.println("In case you f'ed up and typed the wrong thing... put in your answer again.");
+				}
 			}
 		}
 		return false;

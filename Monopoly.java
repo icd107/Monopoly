@@ -11,7 +11,6 @@ public class Monopoly
 		int playerNumber = 0;
 		boolean game = true;
 
-
 		while(playerNumber > 8 || playerNumber < 2)
 		{
 			System.out.println("How many players do you want?");
@@ -43,6 +42,8 @@ public class Monopoly
 					int roll = die.rollDie();
 					System.out.println("You rolled a " + roll);
 					players[i].move(roll);
+
+					System.out.println("Property canbuy : " + playerSpace.canBuy());
 					
 					System.out.println(players[i]);
 
