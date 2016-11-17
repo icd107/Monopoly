@@ -22,12 +22,14 @@ public class Railroad extends Space
 	{
 		return owner;
 	}
+	@Override
 	int mortgageProperty()
 	{
 		resetProperty();
 		isMortgaged = true;
 		return cost / 2;
 	}
+	@Override
 	void unMortgageProperty()
 	{
 		isMortgaged = false;

@@ -44,7 +44,10 @@ public class Space
 	//Placeholders to prevent me from getting errors
 	//Don't judge me this was my quick fix
 	void setOwner(int owner) {}
-	int getOwner() { return 0; }
+	int getOwner() { return -1; }
 	int getCostOfUpgrade() { return 0; }
 	void upgradeProperty() {}
+	int mortgageProperty() { return 0; }
+	boolean isMortgaged() { return false; }
+	void unMortgageProperty() {}
 }

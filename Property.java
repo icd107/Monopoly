@@ -26,6 +26,7 @@ public class Property extends Space
 	{
 		return owner;					//returns owner id
 	}
+	@Override
 	int mortgageProperty()
 	{
 		resetProperty();				//mortage property; return amount gained
@@ -38,6 +39,7 @@ public class Property extends Space
 		hotel = false;
 		rent = initRent;
 	}
+	@Override
 	void unMortgageProperty()
 	{
 		isMortgaged = false;

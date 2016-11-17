@@ -2,30 +2,34 @@
 
 public class Player
 {
-	private int id;
 	private int money;
 	private String name;
 	private int locationIndex;
+	private boolean isBankrupt;
 
-	Player(String name, int id, int initMoney)
+	Player(String name, int initMoney)
 	{
 		this.name = name;
-		this.id = id;
 		this.money = initMoney;
 		locationIndex = 0;
+		isBankrupt = false;
 	}
 
 	void addMoney(int money)
 	{
 		this.money += money;
 	}
-	int getID()
-	{
-		return id;
-	}
 	String getName()
 	{
 		return name;
+	}
+	boolean isBankrupt()
+	{
+		return isBankrupt;
+	}
+	void goBankrupt()
+	{
+		isBankrupt = true;
 	}
 	void subtractMoney(int money)
 	{
@@ -48,7 +52,7 @@ public class Player
 			addMoney(200);
 		}
 	}
-	public int getMoney()
+	int getMoney()
 	{
 		return money;
 	}
