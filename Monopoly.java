@@ -48,21 +48,51 @@ public class Monopoly
 
 					if(playerSpace.canBuy())
 					{
-						System.out.println("Do you want to buy " + playerSpace.getName() + "?");
-						if(board.checkIfYes(in))
+						if(players[i].getMoney() > (players[i].getMoney() - playerSpace.getCost()))
 						{
-							players[i].subtractMoney(playerSpace.getCost());
-							playerSpace.setOwner(i);
-							System.out.println("Now you own " + playerSpace.getName() + "!");
+							System.out.println("Do you want to buy " + playerSpace.getName() + "?");
+							if(board.checkIfYes(in))
+							{
+								players[i].subtractMoney(playerSpace.getCost());
+								playerSpace.setOwner(i);
+								System.out.println("Now you own " + playerSpace.getName() + "!");
+								System.out.println("Your new balance")
+							}
+						}
+						else
+						{
+							System.out.println("You cannot afford this property.");
 						}
 					}
 					if(playerSpace.getOwner() == players[i].getID())
 					{
-						System.out.println("Do you want to buy a house or hotel?");
-						if(board.checkIfYes(in))
+						if(players[i].getMoney() > (players[i].getMoney() - playerSpace.getCostOfUpgrade()))
 						{
-							players[i].subtractMoney(playerSpace.getCostOfUpgrade());
-							playerSpace.upgradeProperty();
+							System.out.println("Do you want to buy a house or hotel?");
+							if(board.checkIfYes(in))
+							{
+								players[i].subtractMoney(playerSpace.getCostOfUpgrade());
+								playerSpace.upgradeProperty();
+							}
+						}
+						else
+						{
+							System.out.println("You can't afford an upgrade.");
+						}
+					}
+					else
+					{
+						System.out.println("You have to pay $" + playerSpace.getRent() + " to " + playerSpace.getOwner() + " because they own " + playerSpace.getName());
+						players[i].subtractMoney(playerSpace.getRent());
+						players[playerSpace.getOwner()].addMoney(playerSpace.getRent());
+						System.out.println("You now have $" + players[i].getMoney());
+					}
+					if(playerSpace.getMoney() < 0)
+					{
+						System.out.println("You are bankrupt, do you want to mortgage a property?");
+						if(board.checkIfYes())
+						{
+
 						}
 					}
 
