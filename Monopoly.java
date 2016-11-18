@@ -75,7 +75,7 @@ public class Monopoly
 					}
 
 					//Upgrade property player is on if they own
-					else if(playerSpace.getOwner() == i)
+					else if(playerSpace.getOwner() == i && playerSpace.isOwned())
 					{
 						if(playerSpace.isMortgaged())
 						{
@@ -107,9 +107,9 @@ public class Monopoly
 					}
 
 					//if property is owned by someone else pay rent
-					else if(playerSpace.getOwner() != 0 && playerSpace.getOwner() != i)
+					else if(playerSpace.getOwner() != i)
 					{
-						if(playerSpace.getOwner() < 0)
+						if(playerSpace.getOwner() == 0 && !playerSpace.isOwned())
 						{
 							System.out.println("You are fined $" + playerSpace.getRent());
 							System.out.println("Your new balance is $" + players[i].getMoney());

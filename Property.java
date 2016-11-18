@@ -45,6 +45,14 @@ public class Property extends Space
 		isMortgaged = false;
 	}
 	@Override
+	boolean isOwned()
+	{
+		if(canBuy)
+			return false;
+		else
+			return true;
+	}
+	@Override
 	void upgradeProperty()
 	{
 		if(houses < 4)

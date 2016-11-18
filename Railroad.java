@@ -39,6 +39,14 @@ public class Railroad extends Space
 		rent = initRent;
 	}
 	@Override
+	boolean isOwned()
+	{
+		if(canBuy)
+			return false;
+		else
+			return true;
+	}
+	@Override
 	void upgradeProperty()
 	{
 		rent *= 2;
