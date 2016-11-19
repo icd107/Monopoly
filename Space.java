@@ -7,6 +7,7 @@ public class Space
 	boolean isMortgaged;
 	boolean canBuy;
 	int cost;
+	boolean isSpace;
 
 	Space(String name, int rent)
 	{
@@ -15,6 +16,7 @@ public class Space
 		this.isMortgaged = false;
 		this.cost = 0;
 		this.canBuy = false;
+		this.isSpace = true;
 	}
 
 	int getRent()
@@ -31,6 +33,10 @@ public class Space
 	String getName()
 	{
 		return name;
+	}
+	boolean getIsSpace()
+	{
+		return isSpace;
 	}
 	boolean canBuy()
 	{

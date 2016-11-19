@@ -56,7 +56,7 @@ public class Monopoly
 					//Buy properties
 					if(playerSpace.canBuy())
 					{
-						if(players[i].getMoney() > (players[i].getMoney() - playerSpace.getCost()))
+						if(0 < (players[i].getMoney() - playerSpace.getCost())) //if player can afford property
 						{
 							System.out.println("Do you want to buy " + playerSpace.getName() + "?");
 							System.out.println("It costs $" + playerSpace.getCost());
@@ -89,7 +89,7 @@ public class Monopoly
 								System.out.println("Your new balance is $" + players[i].getMoney());
 							}
 						}
-						if(players[i].getMoney() > (players[i].getMoney() - playerSpace.getCostOfUpgrade()))
+						if(0 < (players[i].getMoney() - playerSpace.getCostOfUpgrade()))
 						{
 							System.out.print("Do you want to buy a house or hotel?");
 							System.out.println(" It costs $" + playerSpace.getCostOfUpgrade());
@@ -107,7 +107,7 @@ public class Monopoly
 					}
 
 					//if property is owned by someone else pay rent
-					else if(playerSpace.getOwner() != i)
+					else
 					{
 						if(playerSpace.getOwner() == 0 && !playerSpace.isOwned())
 						{
@@ -120,7 +120,7 @@ public class Monopoly
 						}
 						else
 						{
-							System.out.println("You have to pay $" + playerSpace.getRent() + " to " + playerSpace.getOwner() + " because they own " + playerSpace.getName());
+							System.out.println("You have to pay $" + playerSpace.getRent() + " to " + players[playerSpace.getOwner()].getName() + " because they own " + playerSpace.getName());
 							players[i].subtractMoney(playerSpace.getRent());
 							players[playerSpace.getOwner()].addMoney(playerSpace.getRent());
 							System.out.println("Your new balance is $" + players[i].getMoney());

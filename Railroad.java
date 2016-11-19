@@ -9,6 +9,7 @@ public class Railroad extends Space
 		initRent = rent; //generally begins at 50
 		this.canBuy = true;
 		this.cost = cost;
+		this.isSpace = false;
 	}
 
 	@Override
