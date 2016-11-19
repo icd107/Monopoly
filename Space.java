@@ -34,7 +34,7 @@ public class Space
 	{
 		return name;
 	}
-	boolean getIsSpace()
+	boolean isSpace()
 	{
 		return isSpace;
 	}

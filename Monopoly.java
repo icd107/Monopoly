@@ -109,10 +109,18 @@ public class Monopoly
 					//if property is owned by someone else pay rent
 					else
 					{
-						if(playerSpace.getOwner() == 0 && !playerSpace.isOwned())
+						if(playerSpace.getOwner() == 0 && playerSpace.isSpace())
 						{
-							System.out.println("You are fined $" + playerSpace.getRent());
-							System.out.println("Your new balance is $" + players[i].getMoney());
+							if(playerSpace.getRent() < 0)
+							{
+								System.out.println("You are given $" + Math.abs(playerSpace.getRent()));
+								System.out.println("Your new balance is $" + players[i].getMoney());
+							}
+							else
+							{
+								System.out.println("You are fined $" + playerSpace.getRent());
+								System.out.println("Your new balance is $" + players[i].getMoney());
+							}
 						}
 						else if(playerSpace.isMortgaged())
 						{
@@ -137,6 +145,7 @@ public class Monopoly
 					{
 						System.out.println("\nYou have rolled three doubles!\nYou're going to be fined $300!\n");
 						players[i].subtractMoney(playerSpace.getRent());
+						System.out.println("Your new balance is $" + players[i].getMoney());
 						break;
 					}
 
